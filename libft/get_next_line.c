@@ -6,7 +6,7 @@
 /*   By: ilmahjou <ilmahjou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 15:23:05 by ilmahjou          #+#    #+#             */
-/*   Updated: 2025/01/24 14:37:50 by ilmahjou         ###   ########.fr       */
+/*   Updated: 2025/01/26 19:13:20 by ilmahjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,7 @@ char	*ft_read_file(int fd, char *buffer)
 			return (free(buff), free(temp), NULL);
 		free(temp);
 	}
-	free(buff);
-	return (buffer);
+	return (free(buff), buffer);
 }
 
 char	*ft_extract_line(char *buffer)

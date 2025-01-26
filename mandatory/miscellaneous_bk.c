@@ -6,7 +6,7 @@
 /*   By: ilmahjou <ilmahjou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 14:28:52 by ilmahjou          #+#    #+#             */
-/*   Updated: 2025/01/26 00:54:21 by ilmahjou         ###   ########.fr       */
+/*   Updated: 2025/01/26 17:59:06 by ilmahjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,20 @@ int	click(t_list *no)
 
 void	print_and_exit(void)
 {
-	printf("Error : Map path not found !\n");
+	ft_printf("Error : Map path not found !\n");
 	exit(0);
 }
 
 void	won_and_ext(t_list *no)
 {
-	printf("You won !\n");
+	ft_printf("You won !\n");
 	cleanup(no);
 	exit(0);
 }
 
 void	images_protection(t_list *no)
 {
-	printf("Error : Images path not found !");
+	ft_printf("Error : Images path not found !");
 	cleanup(no);
 	exit (0);
 }

@@ -6,7 +6,7 @@
 #    By: ilmahjou <ilmahjou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/26 16:17:47 by ilmahjou          #+#    #+#              #
-#    Updated: 2025/01/26 16:17:48 by ilmahjou         ###   ########.fr        #
+#    Updated: 2025/01/26 18:30:44 by ilmahjou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,11 +24,11 @@ SRC = so_long.c \
       mandatory/miscellaneous.c \
       mandatory/miscellaneous_bk.c \
       mandatory/mappings.c \
-      mandatory/mapping2.c \
       mandatory/components.c \
       mandatory/free.c \
       mandatory/backtracking.c \
-      mandatory/backtracking_utils.c
+      mandatory/backtracking_utils.c \
+	  mapping2.c \
 
 OBJ_DIR = obj
 OBJECTS = $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.c=.o)))

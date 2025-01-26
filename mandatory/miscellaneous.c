@@ -6,7 +6,7 @@
 /*   By: ilmahjou <ilmahjou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 14:29:00 by ilmahjou          #+#    #+#             */
-/*   Updated: 2025/01/26 17:33:28 by ilmahjou         ###   ########.fr       */
+/*   Updated: 2025/01/26 18:44:02 by ilmahjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_assign_pictures(t_list *no)
 {
-	no->wall = mlx_xpm_file_to_image(no->mlx, "./imgs/ww.xpm", &no->xu, &no->yu);
+	no->wall = mlx_xpm_file_to_image(no->mlx, "./imgs/w.xpm", &no->xu, &no->yu);
 	no->floor = mlx_xpm_file_to_image(no->mlx, "./imgs/0.xpm",
 			&no->xu, &no->yu);
 	no->play = mlx_xpm_file_to_image(no->mlx, "./imgs/P.xpm", &no->xu, &no->yu);
@@ -63,7 +63,6 @@ void	ft_scan(char *map)
 {
 	t_list	no;
 
-
 	no = (t_list){0};
 	no.mapone = ft_read_map(map);
 	no.x_win = ft_count_size_x(no.mapone);
@@ -79,6 +78,5 @@ void	ft_scan(char *map)
 	no.collectibles = ft_count_collectibles(&no);
 	mlx_hook(no.win, 2, 1L << 0, key, &no);
 	mlx_hook(no.win, 17, 1L << 0, click, &no);
-	//free(no.mapone);
 	mlx_loop(no.mlx);
 }

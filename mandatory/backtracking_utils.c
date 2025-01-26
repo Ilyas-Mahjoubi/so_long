@@ -6,74 +6,67 @@
 /*   By: ilmahjou <ilmahjou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 14:27:32 by ilmahjou          #+#    #+#             */
-/*   Updated: 2025/01/26 16:24:48 by ilmahjou         ###   ########.fr       */
+/*   Updated: 2025/01/26 18:44:23 by ilmahjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static	int	words_counter(char *s, char c)
+int	ft_count_collectibles(t_list *no)
 {
+	char	*str;
 	int		i;
-	int		words;
+	int		collectibles;
 
+	str = no->mapone;
 	i = 0;
-	words = 0;
-	while (s[i] != '\0')
+	collectibles = 0;
+	while (str[i] != '\0')
 	{
-		if (s[i] == c)
-			i++;
-		else
-		{
-			words++;
-			while (s[i] != '\0' && s[i] != c)
-				i++;
-		}
-	}
-	return (words);
-}
-
-static char	**free_mem(char **mem)
-{
-	int	i;
-
-	i = 0;
-	while (mem[i])
-	{
-		free(mem[i]);
+		if (str[i] == 'C')
+			collectibles++;
 		i++;
 	}
-	free(mem);
-	return (NULL);
+	return (collectibles);
 }
 
-char	**ft_split(char *s, char c)
+int	ft_player_position_x(t_list *no)
 {
-	size_t		word_len;
-	char		**split;
-	size_t		i;
+	char	*str;
+	int		i;
+	int		x;
 
+	str = no->mapone;
 	i = 0;
-	if (!s)
-		return (NULL);
-	split = (char **)malloc((words_counter(s, c) + 1) * sizeof(*split));
-	if (!split)
-		return (NULL);
-	while (*s != '\0')
+	x = 0;
+	while (str[i] != '\0')
 	{
-		while (*s && *s == c)
-			s++;
-		word_len = 0;
-		while (s[word_len] && s[word_len] != c)
-			word_len++;
-		if (word_len != 0)
-			split[i++] = ft_substr(s, 0, word_len);
-		if (word_len != 0 && split[i - 1] == 0)
-			return (free_mem(split));
-		s += word_len;
+		if (str[i] == '\n')
+			x = -1;
+		i++;
+		x++;
+		if (str[i] == 'P')
+			break ;
 	}
-	split[i] = NULL;
-	return (split);
+	return (x);
 }
 
+int	ft_player_position_y(t_list *no)
+{
+	char	*str;
+	int		i;
+	int		y;
 
+	str = no->mapone;
+	i = 0;
+	y = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == '\n')
+			y++;
+		i++;
+		if (str[i] == 'P')
+			break ;
+	}
+	return (y);
+}

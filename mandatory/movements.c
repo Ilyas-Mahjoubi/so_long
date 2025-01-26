@@ -6,7 +6,7 @@
 /*   By: ilmahjou <ilmahjou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 14:29:09 by ilmahjou          #+#    #+#             */
-/*   Updated: 2025/01/26 17:36:11 by ilmahjou         ###   ########.fr       */
+/*   Updated: 2025/01/26 18:45:26 by ilmahjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	key_right(t_list *no)
 				change_collectible(no);
 		}
 		no->xp += 64;
-		printf("Player Moves : %d\n", ++no->moves);
+		ft_printf("Player Moves : %d\n", ++no->moves);
 		no->x_move = (no->xp / 64);
 	}
 }
@@ -59,7 +59,7 @@ void	key_left(t_list *no)
 				change_collectible(no);
 		}
 		no->xp -= 64;
-		printf("Player Moves : %d\n", ++no->moves);
+		ft_printf("Player Moves : %d\n", ++no->moves);
 		no->x_move = (no->xp / 64);
 	}
 }
@@ -111,7 +111,7 @@ void	key_up(t_list *no)
 				change_collectible(no);
 		}
 		no->yp -= 64;
-		printf("Player Moves : %d\n", ++no->moves);
+		ft_printf("Player Moves : %d\n", ++no->moves);
 		no->y_move = (no->yp / 64);
 	}
 }
@@ -135,4 +135,3 @@ int	key(int keycode, t_list *all)
 		key_right(all);
 	return (0);
 }
-
